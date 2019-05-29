@@ -48,7 +48,7 @@ export default {
 
 <style scoped>
 .opacity {
-  opacity: 0.9;
+  opacity: 0.5;
 }
 </style>
 

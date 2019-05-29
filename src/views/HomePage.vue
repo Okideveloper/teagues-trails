@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style scoped>
-.bg-img {
+.home-bg-img {
   background-image: url('../assets/home-bg.jpg');
   background-position: center;
   background-repeat: no-repeat;

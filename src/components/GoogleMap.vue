@@ -55,7 +55,7 @@ export default {
 
 <style scoped>
 .map-size {
-  width: 95vw;
+  width: 70vw;
   height: 50vh;
 }
 </style>

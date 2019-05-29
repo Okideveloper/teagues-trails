@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row mb-5">
-      <h1>Nearest Trails</h1>
+      <h1>Hikes Nearby</h1>
     </div>
     <div class="row">
       <div class="column">
