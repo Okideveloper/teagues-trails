@@ -6,25 +6,25 @@
     <div class="row">
       <div class="column">
         <b-card-group columns>
-          <div v-for="trail in trailsList" :key='trail.trailId'>
+          <div v-for="trail in trailSummary" :key="trail.trailId">
             <b-card
               img-top
               img-fluid
-              :header='trail.trailName'
+              :header="trail.trailName"
               :sub-title="trail.trailSummary"
-              :img-src='trail.trailImg'
+              :img-src="trail.trailImg"
               header-bg-variant="dark"
               header-text-variant="light"
             >
-              <p class=''>Location: {{ trail.trailLocation }}</p>
-              <p class=''>Length: {{ trail.trailLength }} miles</p>
-              <p class=''>Ascent: {{ trail.trailAscent }} ft</p>
-              <p class=''>Descent: {{ trail.trailDescent }} ft</p>
-              <p class=''>High: {{ trail.trailHigh }} ft</p>
-              <p class=''>Low: {{ trail.trailLow }} ft</p>
-              <div slot='footer'>
+              <p class>Location: {{ trail.trailLocation }}</p>
+              <p class>Length: {{ trail.trailLength }} miles</p>
+              <p class>Ascent: {{ trail.trailAscent }} ft</p>
+              <p class>Descent: {{ trail.trailDescent }} ft</p>
+              <p class>High: {{ trail.trailHigh }} ft</p>
+              <p class>Low: {{ trail.trailLow }} ft</p>
+              <div slot="footer">
                 <small class="text-muted">
-                  <b-link :href='trail.trailInfo' target='_blank'>More Information</b-link>
+                  <b-link :href="trail.trailInfo" target="_blank">More Information</b-link>
                 </small>
               </div>
             </b-card>
@@ -37,7 +37,9 @@
 
 <script>
 export default {
-  name: 'TrailSummary',
-  props: ['trailSummary']
+  name: "TrailSummary",
+  props: ["trailSummary"]
 }
 </script>
+<style>
+</style>

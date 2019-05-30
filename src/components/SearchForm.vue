@@ -1,24 +1,20 @@
 <template>
-  <div
-    class='d-flex justify-content-center flex-column p-5 bg-dark text-light opacity'>
-    <div class='mb-3'>
-      <h1 class='text-center'>Hike Guide</h1>
-      <h3 class='text-center'>Enter your City</h3>
-      <p class='text-center'>Your Trail awaits</p>
+  <div class="d-flex justify-content-center flex-column p-5 bg-dark text-light opacity">
+    <div class="mb-3">
+      <h1 class="text-center">Hike Guide</h1>
+      <h3 class="text-center">Enter your City</h3>
+      <p class="text-center">Your Trail awaits</p>
     </div>
     <div>
-      <b-form class='d-flex flex-column justify-content-center'>
-        <b-form-input ref='search' type='text' placeholder='Mt. Rainer' v-model='searchQuery'>
-        </b-form-input>
+      <b-form class="d-flex flex-column justify-content-center">
+        <b-form-input ref="search" type="text" placeholder="Mt. Rainer" v-model="searchQuery"></b-form-input>
         <b-button
-          class='mt-3'
-          type='submit'
-          variant='primary'
-          @click.prevent='searchSubmit'
-          v-if='searchQuery.length > 0'
-        >
-            Search
-        </b-button>
+          class="mt-3"
+          type="submit"
+          variant="primary"
+          @click.prevent="searchSubmit"
+          v-if="searchQuery.length > 0"
+        >Search</b-button>
       </b-form>
     </div>
   </div>
@@ -26,24 +22,25 @@
 
 <script>
 export default {
-  name: 'SearchForm',
+  name: "SearchForm",
   data() {
     return {
-      searchQuery: ''
-    }
+      searchQuery: ""
+    };
   },
   methods: {
     searchSubmit() {
       this.$router.push({
-        name: 'TrailResults',
+        name: "TrailResults",
+        key: "T200473179-8a8d07c08addd2f6d7b0c598f9b478b5",
         params: { query: this.searchQuery }
-      })
+      });
     }
   },
   mounted() {
-    this.$refs.search.focus()
+    this.$refs.search.focus();
   }
-}
+};
 </script>
 
 <style scoped>

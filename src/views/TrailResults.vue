@@ -28,10 +28,10 @@
 
 <script>
 
-import axios from "axios";
+
 import { mapState } from 'vuex'
-import GoogleMap from "@/components/GoogleMap";
-import TrailResults from "@/components/TrailSummary";
+import GoogleMap from '@/components/GoogleMap.vue'
+import TrailSummary from '@/components/TrailSummary.vue'
 
 export default {
   name: 'TrailResults',
@@ -46,7 +46,7 @@ export default {
   methods: {
     newSearch() {
       this.$router.push({
-        name: 'Home'
+        name: 'HomePage'
       })
     }
   },
