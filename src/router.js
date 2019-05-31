@@ -1,32 +1,25 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HomePage from '@/views/HomePage'
-import TrailResults from '@/views/TrailResults'
+import HomePage from './views/HomePage.vue'
+import TrailResults from './views/TrailResults.vue'
 
 
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes: [{
       path: '/',
       name: 'HomePage',
       component: HomePage
     },
-    {
-      path: '/google-map/:query',
-      name: 'GoogleMap',
-      component: GoogleMap
-    },
-    {
-      path: '/search-form/:query',
-      name: 'SearchForm',
-      component: SearchForm
-    },
-    {
-      path: '/trail-summary/:query',
-      name: 'TrailSummary',
-      component: TrailSummary
+    {  
+      path: '/trail-results/:query',
+      name: 'TrailResults',
+      component: TrailResults,
+      props: true
     }
   ]
 })

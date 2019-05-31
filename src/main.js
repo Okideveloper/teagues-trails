@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import BootstrapVue from 'bootstrap-vue'
 import Vue from 'vue'
-import App from './App'
+import App from './App.vue'
 import * as VueGoogleMaps from "vue2-google-maps"
 import router from './router'
 import store from './store'
