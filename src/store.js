@@ -4,6 +4,9 @@ import axios from 'axios'
 
 Vue.use(Vuex)
 
+const API_KEY = 'AIzaSyDzlyMo5jrt6ZMx_oJStHMh8G7xktZkmkE'
+const TRAIL_KEY = '200202949-be5202662091a9dc38356c0c802cd058'
+
 export default new Vuex.Store({
   state: {
     searchLocation: {
@@ -31,7 +34,8 @@ export default new Vuex.Store({
         commit,
         dispatch
       }, payload) {
-        const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${payload}&key=${AIzaSyDzlyMo5jrt6ZMx_oJStHMh8G7xktZkmkE}`
+        const url = `https://maps.googleapis.com/maps/api/geocode/js?address=${payload}&key=${AIzaSyDzlyMo5jrt6ZMx_oJStHMh8G7xktZkmkE}`
+        
 
         axios
           .get(url)
@@ -57,7 +61,7 @@ export default new Vuex.Store({
         axios
           .get('https://www.hikingproject.com/data/get-trails', {
             params: {
-              key: 'T200473179-8a8d07c08addd2f6d7b0c598f9b478b5',
+              key: TRAIL_KEY,
               lat: payload.lat,
               lon: payload.lng,
               maxDistance: 10,

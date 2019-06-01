@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import HomePage from './views/HomePage.vue'
 import TrailResults from './views/TrailResults.vue'
 
-
 /*  testing */
 Vue.use(Router)
 
