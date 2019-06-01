@@ -4,7 +4,7 @@ import axios from 'axios'
 
 Vue.use(Vuex)
 
-const API_KEY = 'AIzaSyDzlyMo5jrt6ZMx_oJStHMh8G7xktZkmkE'
+
 const TRAIL_KEY = '200202949-be5202662091a9dc38356c0c802cd058'
 
 export default new Vuex.Store({
