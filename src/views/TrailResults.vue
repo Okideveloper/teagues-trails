@@ -1,6 +1,6 @@
 <template>
   <div class='container'>
-    <div v-if='this.searchLocation.err' class="row d-flex justify-content-between mt-4">
+    <div v-if='this.searchLocation.err' class="row d-flex justify-content-around mt-4">
       <div class="column">
         <h1>No Search Results Found</h1>
       </div>
@@ -9,7 +9,7 @@
       </div>
     </div>
     <div v-else>
-      <div class="row d-flex justify-content-between mt-4">
+      <div class="row d-flex justify-content-around mt-4">
         <div class="column">
           <h1>Search Results for {{ this.searchLocation.name }}</h1>
         </div>
@@ -21,7 +21,7 @@
         <GoogleMap :locationData='searchLocation' :markers='trails'/>
       </div>
       <div class="row mt-5 w-100">
-        <TrailSummary :trailSummary='trails'/>
+        <TrailSummary :trailSummary="trails"/>
       </div>
     </div>
   </div>
@@ -49,10 +49,13 @@ export default {
       this.$router.push({
         name: 'HomePage'
       })
+    },
+    async fetchGeoLocationData() {
+      await this.$store.dispatch('getGeoLocation', this.query);
     }
   },
   mounted() {
-    this.$store.dispatch('getGeoLocation', this.query)
+    this.fetchGeoLocationData();
   }
 }
 </script>

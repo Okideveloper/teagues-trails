@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-content-start mt-4 w-100">
+  <div class="d-flex justify-content-center mt-4 w-100">
     <GmapMap
       :center="{lat: +this.$props.locationData.lat, lng: +this.$props.locationData.lng}"
       :zoom="10"

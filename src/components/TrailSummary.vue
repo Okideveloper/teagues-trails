@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="row mb-5">
+    <div class="d-flex justify-content-center mb-5">
       <h1>Hikes Nearby</h1>
     </div>
     <div class="row">
@@ -24,7 +24,7 @@
               <p class>Low: {{ trail.trailLow }} ft</p>
               <div slot="footer">
                 <small class="text-muted">
-                  <b-link :href="trail.trailInfo" target="_blank">More Information</b-link>
+                  <b-link :href="trail.trailInfo" target="_blank">Select</b-link>
                 </small>
               </div>
             </b-card>

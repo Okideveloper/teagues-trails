@@ -1,13 +1,15 @@
 <template>
   <div class="d-flex justify-content-center flex-column p-5 bg-dark text-light opacity">
     <div class="mb-3">
-      <h1 class="text-center">Hike Guide</h1>
-      <h4 class="text-center">Enter your City</h4>
+      <h1 class="text-center">Take a Hike</h1>
+      <h4 class="text-center">Enter your location</h4>
       <p class="text-center">Your Trail Awaits You</p>
     </div>
     <div>
       <b-form class="d-flex flex-column justify-content-center">
-        <b-form-input ref="search" type="text" placeholder="Mt. Rainer" v-model="searchQuery"></b-form-input>
+        <div>
+          <b-form-input ref="search" type="text" placeholder="Mt. Rainer" v-model="searchQuery"></b-form-input>
+        </div>
         <b-button
           class="mt-3"
           type="submit"
@@ -44,13 +46,8 @@ export default {
 
 <style scoped>
 
-.flex-column  {
-  
-  width: 65vh;
-}
-
 .form-control {
-  margin-left: 105px;
+  margin-left: 38px;
   width: 30vh;
 }
 
