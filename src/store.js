@@ -28,7 +28,7 @@ export default new Vuex.Store({
       state.searchLocation.err = payload
     },
     TRAIL_SUMMARY(state, payload) {
-      console.log(payload, 'Payload')
+      /*console.log(payload, 'Payload')*/
       state.trails = payload
     }
   },
