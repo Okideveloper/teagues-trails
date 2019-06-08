@@ -33,7 +33,10 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    getGeoLocation: async ({ commit, dispatch}, payload) => {
+    getGeoLocation: async ({
+      commit,
+      dispatch
+    }, payload) => {
       const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${payload}&key=AIzaSyBJTRHctMSy0O3F-weOZKQ2JtcP648F9pA`;
 
       try {
@@ -44,13 +47,15 @@ export default new Vuex.Store({
           lng: response.data.results[0].geometry.location.lng
         }
         await commit('SET_LOCATION', data)
-        await dispatch('trailSummary', data);
+        await dispatch('trailSummary', data)
       } catch (err) {
-        console.log(err, 'Error')
         commit('SET_ERROR', err)
+
       }
     },
-    async trailSummary({commit}, payload) {
+    async trailSummary({
+      commit
+    }, payload) {
       const trails = [];
       const trailResponse = await axios.get('https://www.hikingproject.com/data/get-trails', {
         params: {
@@ -61,7 +66,6 @@ export default new Vuex.Store({
           maxResults: 50
         }
       });
-
       trailResponse.data.trails.map(item => {
         trails.push({
           trailName: item.name,
@@ -80,7 +84,7 @@ export default new Vuex.Store({
             trailLatitude: item.latitude
           }
         })
-      }) 
+      })
       commit('TRAIL_SUMMARY', trails);
     }
   }
