@@ -1,11 +1,11 @@
 First Vue app 
 
-Finding Trails
+Finding Hiking trails in your area by entering your location. You select the trail you want and that will direct you to more information. Cheers!
 
 How to test on Local:
 1. clone the app from https://github.com/Okideveloper/teagues-trails
-2. run `npm run serve` to install the npm packages/dependencies
-3. run `npm start` to start the app server
+2. run `npm install` to install the npm packages/dependencies
+3. run `npm run serve` to start the app server
 4. visit http://localhost:8080 to access the app
 
 How to deploy to production servers:
