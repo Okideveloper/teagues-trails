@@ -10,19 +10,26 @@
         <div>
           <b-form-input ref="search" type="text" placeholder="Mt. Rainer" v-model="searchQuery"></b-form-input>
         </div>
-        <b-button
-          class="mt-3"
-          type="submit"
-          variant="primary"
-          @click.prevent="searchSubmit"
-          v-if="searchQuery.length > 0"
-        >Search</b-button>
+        <transition
+          name="bounce"
+          enter-active-class="bounceInLeft"
+          leave-active-class="bounceOutRight"
+        >
+          <b-button
+            class="mt-3"
+            type="submit"
+            variant="primary"
+            @click.prevent="searchSubmit"
+            v-if="searchQuery.length > 0"
+          >Search</b-button>
+        </transition>
       </b-form>
     </div>
   </div>
 </template>
 
 <script>
+require("vue2-animate/dist/vue2-animate.min.css");
 export default {
   name: "SearchForm",
   data() {
@@ -45,7 +52,6 @@ export default {
 </script>
 
 <style scoped>
-
 .form-control {
   margin-left: 38px;
   width: 30vh;
@@ -57,7 +63,7 @@ export default {
 
 h1 {
   font-size: 65px;
-  color:rgb(208, 227, 245)
+  color: rgb(208, 227, 245);
 }
 
 .opacity {

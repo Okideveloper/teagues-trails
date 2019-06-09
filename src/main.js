@@ -14,8 +14,10 @@ Vue.use(BootstrapVue)
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyDzlyMo5jrt6ZMx_oJStHMh8G7xktZkmkE'
-  }
+  },
 })
+
+
 
 new Vue({
   router,

@@ -1,27 +1,27 @@
 <template>
-  <div class="container">
-    <div v-if="this.searchLocation.err" class="row d-flex justify-content-around mt-4">
+  <div class='container'>
+    <div v-if='this.searchLocation.err' class="row d-flex justify-content-between mt-4">
       <div class="column">
         <h1>No Search Results Found</h1>
       </div>
       <div class="column">
-        <b-button @click="newSearch" variant="danger">Search Again</b-button>
+        <b-button @click='newSearch' variant="danger">Search Again</b-button>
       </div>
     </div>
     <div v-else>
-      <div class="row d-flex justify-content-around mt-4">
+      <div class="row d-flex justify-content-between mt-4">
         <div class="column">
           <h1>Search Results for {{ this.searchLocation.name }}</h1>
         </div>
         <div class="column">
-          <b-button @click="newSearch" variant="danger">Search Again</b-button>
+          <b-button @click='newSearch' variant="danger">Search Again</b-button>
         </div>
       </div>
       <div class="row">
-        <GoogleMap :locationData="searchLocation" :markers="trails"/>
+        <GoogleMap :locationData='searchLocation' :markers='trails'/>
       </div>
       <div class="row mt-5 w-100">
-        <TrailSummary :trailSummary="trails"/>
+        <TrailSummary :trailSummary='trails' />
       </div>
     </div>
   </div>

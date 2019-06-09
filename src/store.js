@@ -5,7 +5,8 @@ import axios from 'axios'
 Vue.use(Vuex)
 
 
-const TRAIL_KEY = '200202949-be5202662091a9dc38356c0c802cd058'
+const TRAIL_KEY = '200202949-be5202662091a9dc38356c0c802cd058';
+const GOOGLE_MAPS_API_KEY = 'AIzaSyCnyL8uMZZ2--PxXexaApNEb0oMTN2vbyM';
 
 export default new Vuex.Store({
   state: {
@@ -28,7 +29,7 @@ export default new Vuex.Store({
       state.searchLocation.err = payload
     },
     TRAIL_SUMMARY(state, payload) {
-      /*console.log(payload, 'Payload')*/
+
       state.trails = payload
     }
   },
@@ -37,7 +38,7 @@ export default new Vuex.Store({
       commit,
       dispatch
     }, payload) => {
-      const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${payload}&key=AIzaSyBJTRHctMSy0O3F-weOZKQ2JtcP648F9pA`;
+      const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${payload}&key=${GOOGLE_MAPS_API_KEY}`;
 
       try {
         const response = await axios.get(url);
@@ -46,7 +47,7 @@ export default new Vuex.Store({
           lat: response.data.results[0].geometry.location.lat,
           lng: response.data.results[0].geometry.location.lng
         }
-        await commit('SET_LOCATION', data)
+        await commit('SET_LOCATION', data);
         await dispatch('trailSummary', data)
       } catch (err) {
         commit('SET_ERROR', err)
@@ -66,6 +67,7 @@ export default new Vuex.Store({
           maxResults: 50
         }
       });
+
       trailResponse.data.trails.map(item => {
         trails.push({
           trailName: item.name,
@@ -84,7 +86,8 @@ export default new Vuex.Store({
             trailLatitude: item.latitude
           }
         })
-      })
+        return trails
+      });
       commit('TRAIL_SUMMARY', trails);
     }
   }
