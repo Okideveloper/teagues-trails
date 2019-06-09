@@ -22,10 +22,8 @@
               <p class>Descent: {{ trail.trailDescent }} ft</p>
               <p class>High: {{ trail.trailHigh }} ft</p>
               <p class>Low: {{ trail.trailLow }} ft</p>
-              <div slot="footer">
-                <small class="text-muted">
-                  <b-link :href="trail.trailInfo" target="_blank">Select</b-link>
-                </small>
+              <div slot="footer" class="text-center">
+                <b-link :href="trail.trailInfo" target="_blank">Select</b-link>
               </div>
             </b-card>
           </div>
